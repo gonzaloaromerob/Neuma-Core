@@ -9,7 +9,7 @@ Conservar decisiones públicas o técnicas, arquitectura publicable, documentaci
 
 ## Estructura
 - `decisions/` — Architecture Decision Records (ADR) y decisiones versionadas apropiadas para publicación.
-- `architecture/` — arquitectura conceptual y operativa publicable.
+- `architecture/` — arquitectura conceptual y operativa publicable, incluido el contrato de bootstrap de proyectos y gobierno de artefactos.
 - `docs/` — documentación consolidada, guías y síntesis públicas.
 - `skills/` — especificaciones y artefactos técnicos de skills cuando sean publicables.
 - `research/` — investigación y análisis bajo control de versiones.
@@ -17,7 +17,8 @@ Conservar decisiones públicas o técnicas, arquitectura publicable, documentaci
 
 ## Gobierno
 - Mantener un único System of Record explícito por objeto.
-- SharePoint conserva el corpus rector interno de NEUMA 3.0.
+- SharePoint conserva el corpus rector interno de NEUMA 3.0, incluidos el Project Core y los estándares/plantillas canónicos de artefactos.
+- Los rectores `<Proyecto> - Inst Proyecto.DocX` permanecen en el repositorio SharePoint canónico de cada proyecto; GitHub registra únicamente el contrato arquitectónico publicable, no copias completas de esos rectores.
 - GitHub conserva únicamente conocimiento deliberadamente versionable/publicable y artefactos técnicos apropiados.
 - Notion conserva proyectos, relaciones, riesgos, tareas, Decision Gates y seguimiento operativo.
 - Los repositorios documentales autorizados conservan evidencia u originales cuando corresponda.
