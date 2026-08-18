@@ -1,0 +1,87 @@
+<!-- demo.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> NEUMA | Reunión (Virtual o Presencial)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Solicita una Reunión (Virtual o Presencial)</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="demo.html">Demo</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Formulario de Solicitud</h2>
+      <form action="https://formsubmit.co/info@neuma.com.co" method="POST">
+        <label>Nombre</label>
+          <input type="text" name="Nombre" required>
+        <p>
+        <label>Correo</label>
+          <input type="email" name="email" required> <!-- IMPORTANTE: name="email" -->
+        <p>
+        <label>Profesión o Sector</label>
+          <input type="text" name="Profesion">
+        <p>
+        <label>¿Qué esperas de NEUMA?</label>
+          <textarea name="mensaje" rows="5"></textarea>
+
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_subject" value="Solicitud de Reunión (V/P)">
+        <input type="hidden" name="_template" value="table">
+        <p>
+        <button type="submit">Enviar solicitud</button>
+      </form>
+
+      <script>
+        const form = document.getElementById('demoForm');
+        form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+  
+        // 1) Asegura que el usuario marcó el reCAPTCHA
+        const token = grecaptcha.getResponse();
+        if (!token) {
+          alert('Por favor completa el reCAPTCHA.');
+        return;
+        }   
+
+        // 2) Incluye el token en el envío a Formspree
+        const fd = new FormData(form);
+        fd.append('g-recaptcha-response', token);
+
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          grecaptcha.reset();
+          alert('¡Gracias! Te contactaremos muy pronto.');
+        } else {
+        alert('Hubo un problema al enviar. Inténtalo nuevamente.');
+        } 
+        });
+      </script>
+        <!-- Script de reCAPTCHA -->
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Info @ NEUMA.Com.CO</p>
+    <p>&copy; 2025 - NEUMA</p>
+  </footer>
+</body>
+</html>
