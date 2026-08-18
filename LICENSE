@@ -1,5 +1,24 @@
-MIT License
+NEUMA Core — Licensing Notice
 
 Copyright (c) 2026 Gonzalo A Romero B
 
-[In deployment process].
+This repository contains different categories of material. No single open license should be inferred to apply to every file solely because it is stored in this repository.
+
+1. Software and code
+Software or code that is expressly identified as licensed under the MIT License may be used under the terms in `LICENSES/MIT.txt`.
+
+2. Methodological documentation
+Unless a file or directory contains an explicit license notice stating otherwise, NEUMA methodological documentation, manuals, diagrams, research, decision records and other written materials are not granted under the MIT License by this root notice.
+
+A future Creative Commons license may be adopted for a specifically delimited public documentation corpus only after an explicit governance decision and review of ownership, provenance, third-party material and trademark implications. No Creative Commons license is granted by this notice.
+
+3. Trademarks and names
+No license to trademarks, service marks, trade names, logos or other source identifiers is granted by the MIT License or by this notice. Use of the name NEUMA as a source identifier may require separate authorization.
+
+4. Third-party material
+Third-party content remains subject to its own terms, notices and rights. Inclusion in this repository does not relicense third-party material.
+
+5. Internal corpus
+The internal governing corpus of NEUMA 3.0 is maintained separately in its designated System of Record. Public material in this repository does not automatically replace or relicense that internal corpus.
+
+This notice is intended to prevent accidental over-licensing while the public licensing architecture is finalized. It is not legal advice and does not itself create rights beyond any explicit license attached to a specific asset.
