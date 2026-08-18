@@ -7,11 +7,11 @@ Este mapa separa autoridad metodológica, operación vigente, estrategia histór
 
 | Artefacto | Estado / función | Prioridad |
 |---|---|---|
-| `NEUMA 3.0 - Manual de Gobierno.DocX` | Documento rector e integrador; v1.0, borrador de trabajo, uso interno | 1 |
-| `NEUMA 3.0 - Anexos Operativos.DocX` | Constitución Operativa, Arquitectura Operativa e instrumentos de aplicación | 2 |
-| `NEUMA - Prompts.DocX` | Continuidad consolidada reciente; identifica decisiones posteriores y configuración vigente | 3 |
+| `NEUMA 3.0 - Manual de Gobierno.DocX` | Documento rector e integrador; **v1.1, vigente interno, consolidación operativa** | 1 |
+| `NEUMA 3.0 - Anexos Operativos.DocX` | Constitución Operativa, Arquitectura Operativa e instrumentos de aplicación; subordinado al Manual | 2 |
+| `NEUMA - Prompts.DocX` | Continuidad consolidada reciente; identifica decisiones posteriores y configuración vigente sin sustituir automáticamente al corpus rector | 3 |
 | `NEUMA - Runbook Integraciones.DocX` | Referencia operativa de integraciones; debe mantenerse alineada con NEUMA Operations y revalidarse por capacidad | Operativa |
-| ADR / registros de decisión | Evidencia de decisiones específicas y trazabilidad | Por decisión |
+| ADR / registros de decisión | Evidencia de decisiones específicas y trazabilidad dentro de su alcance | Por decisión |
 
 ## Corpus complementario vigente
 
@@ -31,9 +31,9 @@ Los materiales bajo `OLD/`, incluidas versiones previas de presentaciones y `NEU
 - síntesis metodológicas deliberadamente publicables;
 - ADR apropiados para publicación;
 - arquitectura y documentación técnica no sensible;
-- materiales cuya licencia y procedencia estén claras.
+- materiales cuya licencia, procedencia y sensibilidad estén claras.
 
-La versión pública nunca sustituye automáticamente al corpus interno rector.
+La versión pública nunca sustituye automáticamente al corpus interno rector. El licenciamiento de un activo público tampoco se extrapola al corpus interno ni a otros tipos de activo.
 
 ## Regla de reconciliación
 
