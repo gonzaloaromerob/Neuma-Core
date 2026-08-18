@@ -1,8 +1,5 @@
-# Research
+# Investigación NEUMA
 
-Investigaciones, comparativos, experimentos y análisis de NEUMA que requieran trazabilidad/versionado.
+Este directorio contiene únicamente investigación deliberadamente publicable y útil para la evolución del marco.
 
-## Criterio de inclusión
-- conservar fuentes y fecha de corte cuando el contenido dependa de capacidades cambiantes;
-- separar evidencia, inferencias y recomendaciones;
-- no convertir resultados experimentales en principios estables sin decisión explícita.
+Las fuentes internas, comerciales, de clientes, legales, personales o de trabajo permanecen en su repositorio de origen y se referencian desde la capa operativa cuando sea necesario. Una investigación se promueve aquí solo después de revisar sensibilidad, procedencia, estabilidad y valor de versionado.
