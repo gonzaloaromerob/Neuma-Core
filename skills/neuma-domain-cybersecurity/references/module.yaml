@@ -1,0 +1,20 @@
+id: neuma-domain-cybersecurity
+type: domain
+version: v0.2-pilot
+status: pilot
+architecture: neuma-v4-modular
+operations_baseline: v3.7
+compatibility:
+  operations:
+    compatible: [v3.7]
+    unknown: "any version not explicitly evaluated"
+  core: "NEUMA v4 modular specialization contract"
+authority_role: "technical facts, technical authority, and security risk"
+composition:
+  hardening_allowed: true
+  weakening_core_operations: false
+  unresolved_material_conflict: human_gate
+deprecation:
+  canonical_version: v0.2-pilot
+  replaced_versions: [v0.1-pilot]
+  migration: "Preserve configurations, evidence, open Gates, authorization state, and rollback information needed for continuity."
