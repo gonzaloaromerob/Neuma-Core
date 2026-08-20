@@ -17,7 +17,7 @@ Fuente piloto: https://docs.google.com/document/d/1VKxZs1FfZvpOa5nTD8OsqcLErfIId
 3. **Notion no sobrescribe GitHub automáticamente.** Cambios conceptuales originados en Notion se convierten en una solicitud explícita de cambio.
 4. **Sin sincronización bidireccional oculta.** Cualquier flujo inverso requiere intención explícita y un nuevo Gate cuando sea material.
 5. **Idempotencia:** usar referencias estables y evitar recrear registros cuando la proyección ya existe.
-6. **Conflictos:** prevalece el System of Record designado; la divergencia se reporta y no se resuelve por sobrescritura automática.
+6. **Conflictos:** cuando el System of Record designado sea inequívoco, prevalece. Si dos fuentes aparentemente autorizadas discrepan materialmente y la precedencia no puede establecerse con evidencia suficiente, tratar como `conflict`: no escoger, fusionar, sobrescribir ni propagar heurísticamente; resolver primero la autoridad o escalar a decisión humana cuando sea material.
 7. **Efectos secundarios:** antes de escribir se identifican CI/CD, deployments, webhooks, bots y notificaciones; después se verifican los efectos observados.
 8. **Sensibilidad:** no mover contenido confidencial o restringido sin verificar autorización y permisos del destino.
 9. **Pilotos:** capacidades nuevas se prueban primero con información ficticia/no sensible y aislamiento proporcional al riesgo.
@@ -31,4 +31,4 @@ Una proyección puede incluir URL canónica, identificador, estado derivado, pro
 La corrección de un registro derivado en Notion no reescribe el historial Git. Ante divergencia se corrige o marca el derivado desde el canónico.
 
 ## Evidencia de validación
-El 2026-08-18 se demostró idempotencia con ADR-002: dos resoluciones de la misma clave mantuvieron un único registro; una divergencia deliberada en Notion fue detectada y compensada desde GitHub sin modificar el canónico.
+El 2026-08-18 se demostró idempotencia con ADR-002: dos resoluciones de la misma clave mantuvieron un único registro; una divergencia deliberada en Notion fue detectada y compensada desde GitHub sin modificar el canónico. El 2026-08-20 se reforzó el tratamiento de conflictos de autoridad conforme al ADR-005.
