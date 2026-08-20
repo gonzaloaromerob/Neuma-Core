@@ -5,7 +5,7 @@ Repositorio público y versionado para conocimiento de NEUMA deliberadamente apt
 ## Propósito
 Conservar decisiones públicas o técnicas, arquitectura publicable, documentación metodológica seleccionada, investigación, especificaciones y artefactos técnicos cuya procedencia y sensibilidad permitan alojarlos aquí.
 
-**GitHub no es el System of Record del corpus rector interno de NEUMA 3.0.** El corpus interno rector y sus originales permanecen en SharePoint. Una síntesis pública o un artefacto versionado en este repositorio no sustituye automáticamente al documento interno del que deriva.
+**GitHub no es el System of Record del corpus rector interno de NEUMA.** El corpus interno rector y sus originales permanecen en SharePoint. Una síntesis pública o un artefacto versionado en este repositorio no sustituye automáticamente al documento interno del que deriva.
 
 ## Estructura
 - `decisions/` — Architecture Decision Records (ADR) y decisiones versionadas apropiadas para publicación.
@@ -17,7 +17,7 @@ Conservar decisiones públicas o técnicas, arquitectura publicable, documentaci
 
 ## Gobierno
 - Mantener un único System of Record explícito por objeto.
-- SharePoint conserva el corpus rector interno de NEUMA 3.0 y los estándares/plantillas canónicos de artefactos.
+- SharePoint conserva el corpus rector interno de NEUMA y los estándares/plantillas canónicos de artefactos. La versión metodológica se gobierna dentro de los documentos; no se codifica necesariamente en sus nombres de archivo.
 - La skill NEUMA Operations transporta el contrato transversal de NEUMA Core y la operación portable; los rectores de proyecto no lo duplican ni congelan.
 - Los rectores `<Proyecto> - Inst Proyecto.DocX` permanecen en el repositorio SharePoint canónico de cada proyecto y contienen únicamente contexto, alcance y reglas específicas; GitHub registra el contrato arquitectónico publicable, no copias completas de esos rectores.
 - Para DOCX, XLSX, PPTX y PDF, un estándar/plantilla organizacional declarado debe resolverse desde su System of Record antes de generar o reformatear; los defaults portables solo aplican cuando no existe un override gobernado.
