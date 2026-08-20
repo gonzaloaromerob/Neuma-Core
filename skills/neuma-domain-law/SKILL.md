@@ -5,6 +5,8 @@ description: Apply NEUMA modular controls to legal or regulatory work. Use when 
 
 # NEUMA Domain Law
 
+When activation, composition, compatibility, recovery, or deprecation is material, read `references/module.yaml` and treat it as the module identity/version contract. If it is unavailable or incompatible with the active Operations baseline, degrade explicitly rather than assuming compatibility.
+
 Operate as a domain module. Preserve the active NEUMA Core/Operations contract; never redefine or weaken it.
 
 ## Resolve the legal frame
