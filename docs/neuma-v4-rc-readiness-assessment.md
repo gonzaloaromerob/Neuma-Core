@@ -2,9 +2,13 @@
 
 ## Estado
 
-Evaluación interna previa al Gate humano de declaración RC v4. Este documento **no declara RC**, no publica una release v4, no certifica los módulos piloto y no autoriza cambios PROD.
+Evaluación interna que sustentó el Gate humano de declaración RC v4. El Gate fue autorizado y **NEUMA v4 fue declarado Release Candidate el 2026-08-20**.
 
-Fecha: 2026-08-20.
+Este documento conserva la evidencia pre-RC y su conclusión histórica. La declaración canónica está en `docs/neuma-v4-rc-declaration.md`.
+
+La declaración RC no publica una release v4 canónica, no certifica los módulos piloto y no autoriza cambios PROD.
+
+Fecha de evaluación: 2026-08-20.
 
 Baseline evaluada:
 
@@ -14,17 +18,18 @@ Baseline evaluada:
 - `neuma-workflow-audit` v0.2-pilot;
 - ADR-007 y contrato modular publicados;
 - E2 publicada mediante PR #24;
-- E3 publicada mediante PR #25 / merge SHA `5b0f97dae190351613a270c97bd7d255aba7bc6b`.
+- E3 publicada mediante PR #25 / merge SHA `5b0f97dae190351613a270c97bd7d255aba7bc6b`;
+- preparación pre-RC publicada mediante PR #26 / merge SHA `e376ee508c95d24e96089e2cf338a86357ea1135`.
 
 ## Conclusión ejecutiva
 
-La evidencia E1/E2/E3 satisface la parte arquitectónica y conductual del readiness. Las tres precondiciones documentales/operativas identificadas para el Gate RC quedaron preparadas en esta misma rama:
+La evidencia E1/E2/E3 satisfizo la parte arquitectónica y conductual del readiness. Las tres precondiciones documentales/operativas identificadas para el Gate RC quedaron publicadas:
 
 1. **bundle RC** definido en `docs/neuma-v4-rc-bundle.md`;
 2. **migración v3.x → v4** documentada en `docs/neuma-v4-migration-v3-to-v4.md`;
 3. **rollback RC** documentado en `docs/neuma-v4-rc-rollback.md`.
 
-No se identifica evidencia que justifique modificar Core, Operations v3.8 o los módulos piloto. Una vez verificada la integridad del PR y reconciliadas sus proyecciones, el siguiente paso material es el **Gate humano de declaración RC v4**.
+No se identificó evidencia que justificara modificar Core, Operations v3.8 o los módulos piloto. Tras verificar la integridad de PR #26 y reconciliar sus proyecciones, el Gate humano fue autorizado y el marco pasó de **pre-RC** a **Release Candidate**.
 
 ## Readiness por criterio
 
@@ -41,14 +46,15 @@ No se identifica evidencia que justifique modificar Core, Operations v3.8 o los 
 | Postcondición | Satisfecho | E2 contractual y E3 con write → readback → postcondition. |
 | Compatibilidad | Satisfecho para baseline evaluada | Pilotos v0.2 + Operations v3.8 compatibles por regla gobernada backward-compatible; futuras combinaciones no evaluadas siguen `unknown`. |
 | Pilotos | Satisfecho para validación; no certificados | Los tres pilotos permanecen `v0.2-pilot`. |
-| Bundle RC | Satisfecho documentalmente | `docs/neuma-v4-rc-bundle.md` fija alcance, componentes, versiones y exclusiones. |
-| Migración v3.x → v4 | Satisfecho documentalmente | `docs/neuma-v4-migration-v3-to-v4.md` define migración aditiva, reversible y desacoplada del versionado de Operations/módulos. |
-| Rollback RC | Satisfecho documentalmente | `docs/neuma-v4-rc-rollback.md` fija punto de retorno, triggers, procedimiento y postcondición. |
-| Documentación/proyecciones | En verificación final | La rama corrige referencias pre-E3/pre-v3.8; PR #26 está proyectado en Notion como draft pre-RC. |
+| Bundle RC | Satisfecho | `docs/neuma-v4-rc-bundle.md` fija alcance, componentes, versiones y exclusiones. |
+| Migración v3.x → v4 | Satisfecho | `docs/neuma-v4-migration-v3-to-v4.md` define migración aditiva, reversible y desacoplada del versionado de Operations/módulos. |
+| Rollback RC | Satisfecho | `docs/neuma-v4-rc-rollback.md` fija punto de retorno, triggers, procedimiento y postcondición. |
+| Documentación/proyecciones | Satisfecho para entrada a RC | PR #26 fue publicado y reconciliado antes del Gate. |
+| Gate RC | Completado | Autorización humana explícita el 2026-08-20; declaración canónica en `docs/neuma-v4-rc-declaration.md`. |
 
 ## Bundle RC
 
-La especificación canónica propuesta está en `docs/neuma-v4-rc-bundle.md`. El bundle incluye únicamente Core vigente, Operations v3.8, ADR-007, contrato modular, suite M01–M15/F01–F15, evidencia E2/E3, evaluación pre-RC, migración, rollback y los tres pilotos v0.2 como evidencia experimental.
+La especificación canónica está en `docs/neuma-v4-rc-bundle.md`. El bundle incluye únicamente Core vigente, Operations v3.8, ADR-007, contrato modular, suite M01–M15/F01–F15, evidencia E2/E3, evaluación pre-RC, migración, rollback y los tres pilotos v0.2 como evidencia experimental.
 
 Se excluyen deliberadamente módulos adicionales, promoción automática de pilotos, Operations v4.0 por sincronización nominal, nuevas licencias Creative Commons, política de marca, decisiones de titularidad/procedencia y cualquier cambio PROD.
 
@@ -68,14 +74,14 @@ La ruta documentada en `docs/neuma-v4-migration-v3-to-v4.md` mantiene:
 
 ## Gates jurídicos
 
-Marca, derecho de autor, titularidad/procedencia, Creative Commons, política de marca y legado patrimonial permanecen separados. No se cierran ni reinterpretan por esta evaluación.
+Marca, derecho de autor, titularidad/procedencia, Creative Commons, política de marca y legado patrimonial permanecen separados. No se cierran ni reinterpretan por esta evaluación ni por la declaración RC.
 
 Para un RC técnico/metodológico interno, estos Gates no bloquean por sí solos si el RC no concede nuevas licencias, no adopta política de marca y no formula una nueva posición jurídica. Sí deben resolverse antes de cualquier acción de release cuyo alcance dependa materialmente de esas decisiones.
 
-## Decisión preparada
+## Decisión resultante
 
-Tras verificar el contenido de PR #26 y reconciliar su proyección, el siguiente Gate humano puede formularse de manera mínima:
+El Gate humano de declaración RC fue aprobado. El estado correcto pasa a ser:
 
-> **Declarar o no NEUMA v4 como Release Candidate**, manteniendo Operations v3.8 estable y los tres módulos en v0.2-pilot, sin publicar todavía una release v4 canónica ni ejecutar cambios PROD.
+> **NEUMA v4 — Release Candidate**, con Operations v3.8 estable y los tres módulos especializados en v0.2-pilot, sin release v4 canónica y sin cambios PROD.
 
-Hasta que ese Gate sea decidido, el estado correcto sigue siendo **pre-RC / readiness completado, declaración pendiente**.
+El siguiente Gate humano material es **publicar o no la release v4 canónica**, sujeto a verificar las postcondiciones del RC y la ausencia de hallazgos materiales nuevos.
