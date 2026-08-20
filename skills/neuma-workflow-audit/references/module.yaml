@@ -1,0 +1,20 @@
+id: neuma-workflow-audit
+type: workflow
+version: v0.2-pilot
+status: pilot
+architecture: neuma-v4-modular
+operations_baseline: v3.7
+compatibility:
+  operations:
+    compatible: [v3.7]
+    unknown: "any version not explicitly evaluated"
+  core: "NEUMA v4 modular specialization contract"
+authority_role: "mandate, scope, criteria application, evidence structure, findings, and closure"
+composition:
+  hardening_allowed: true
+  weakening_core_operations: false
+  unresolved_material_conflict: human_gate
+deprecation:
+  canonical_version: v0.2-pilot
+  replaced_versions: [v0.1-pilot]
+  migration: "Preserve mandate, scope, criteria, evidence, findings, open Gates, and remediation state needed for continuity and review."
