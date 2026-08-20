@@ -10,9 +10,11 @@ This architecture note records the public/versionable boundary for NEUMA project
 - **Notion** remains the operational SoR for projects, relations, risks, tasks, Decision Gates and execution tracking.
 
 ## Project bootstrap contract
-A governed project uses one rector document named `<Project> - Inst Proyecto.DocX` in its canonical SharePoint repository. The rector contains only the project's context, scope and specific rules. It does not embed or freeze a NEUMA Core baseline.
+A governed project uses one rector document named `<Project> - Inst Proyecto.DocX` in its canonical repository. The rector contains only the project's context, scope and specific rules. It does not embed or freeze a NEUMA Core baseline.
 
-The ChatGPT Project instruction field should need only a minimal pointer to that rector and to NEUMA Operations. NEUMA Core and transversal operation are resolved from the skill at runtime; the rector need not be uploaded as a Project source.
+The rector and the ChatGPT Project Instructions field are separate artifacts with one-way reference semantics: Project Instructions may point to the rector, but the rector must not contain, reproduce, recommend, quote, template or preserve the Project Instructions text. In particular, a rector must not include a section that proposes or stores “recommended Project Instructions”.
+
+The Project Instructions field should contain only the minimum stable pointer needed to locate and govern through the rector, plus any project-specific instruction that cannot live in the rector. NEUMA Core and transversal operation are resolved from NEUMA Operations at runtime; the rector need not be uploaded as a Project source.
 
 Material changes to NEUMA Core therefore do not trigger rector regeneration by default. A rector is updated only when project-specific context, scope, authority or rules materially change.
 

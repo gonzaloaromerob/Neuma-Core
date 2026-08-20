@@ -10,15 +10,17 @@ Los proyectos ChatGPT necesitan iniciar y continuar con mínima carga manual sin
 1. SharePoint conserva el corpus rector interno, los estándares/plantillas canónicos de artefactos y cada rector `<Proyecto> - Inst Proyecto.DocX`.
 2. Cada rector contiene únicamente contexto, alcance y reglas específicas del proyecto. No incorpora ni congela una baseline de NEUMA Core.
 3. NEUMA Core y la operación transversal se resuelven desde la skill NEUMA Operations; el rector no los reproduce ni los sustituye.
-4. El campo de instrucciones del Proyecto ChatGPT utiliza un puntero mínimo al rector y a NEUMA Operations; no exige cargar el rector como fuente del proyecto ni duplicar el Core.
-5. Los estándares y plantillas de artefactos se resuelven desde su System of Record antes de generar o reformatear. Si existe un override organizacional vigente, este debe recuperarse y aplicarse; el default portable solo procede cuando no existe tal override. Las instrucciones específicas del entregable y las skills técnicas del formato prevalecen sobre defaults visuales.
-6. Esta precedencia aplica transversalmente a DOCX, XLSX, PPTX y PDF, manteniendo estándares y QA específicos para cada familia.
-7. La reejecución del bootstrap es idempotente; divergencias humanas materiales no se sobrescriben silenciosamente.
-8. Los cambios materiales de NEUMA Core se gobiernan en su fuente correspondiente y no requieren regenerar rectores salvo que afecten reglas específicas del proyecto.
+4. El rector y el campo ChatGPT Project Instructions son artefactos distintos con referencia unidireccional: Project Instructions puede apuntar al rector; el rector no contiene, reproduce, recomienda, cita, plantilla ni preserva el texto del campo Project Instructions.
+5. El campo Project Instructions utiliza un puntero mínimo estable al rector y, cuando sea material, a NEUMA Operations. No exige cargar el rector como fuente del proyecto ni duplicar el Core.
+6. Los estándares y plantillas de artefactos se resuelven desde su System of Record antes de generar o reformatear. Si existe un override organizacional vigente, este debe recuperarse y aplicarse; el default portable solo procede cuando no existe tal override. Las instrucciones específicas del entregable y las skills técnicas del formato prevalecen sobre defaults visuales.
+7. Esta precedencia aplica transversalmente a DOCX, XLSX, PPTX y PDF, manteniendo estándares y QA específicos para cada familia.
+8. La reejecución del bootstrap es idempotente; divergencias humanas materiales no se sobrescriben silenciosamente.
+9. Los cambios materiales de NEUMA Core se gobiernan en su fuente correspondiente y no requieren regenerar rectores salvo que afecten reglas específicas del proyecto.
 
 ## Consecuencias
 - Menor duplicación y menor riesgo de deriva entre NEUMA Core y los proyectos.
-- Separación explícita entre contrato transversal, configuración específica del proyecto y estándares de artefactos.
+- Separación explícita entre contrato transversal, configuración específica del proyecto, Project Instructions y estándares de artefactos.
+- El texto operativo del campo Project Instructions no se convierte en contenido del documento rector ni en una sección sugerida dentro de este.
 - Mejor consistencia y trazabilidad entre proyectos y artefactos.
 - Los estándares organizacionales no pueden ser sustituidos silenciosamente por defaults portables por omisión de resolución.
 - GitHub registra el contrato publicable, no las plantillas internas ni contenido confidencial de proyectos.
