@@ -17,8 +17,10 @@ Conservar decisiones públicas o técnicas, arquitectura publicable, documentaci
 
 ## Gobierno
 - Mantener un único System of Record explícito por objeto.
-- SharePoint conserva el corpus rector interno de NEUMA 3.0, incluidos el Project Core y los estándares/plantillas canónicos de artefactos.
-- Los rectores `<Proyecto> - Inst Proyecto.DocX` permanecen en el repositorio SharePoint canónico de cada proyecto; GitHub registra únicamente el contrato arquitectónico publicable, no copias completas de esos rectores.
+- SharePoint conserva el corpus rector interno de NEUMA 3.0 y los estándares/plantillas canónicos de artefactos.
+- La skill NEUMA Operations transporta el contrato transversal de NEUMA Core y la operación portable; los rectores de proyecto no lo duplican ni congelan.
+- Los rectores `<Proyecto> - Inst Proyecto.DocX` permanecen en el repositorio SharePoint canónico de cada proyecto y contienen únicamente contexto, alcance y reglas específicas; GitHub registra el contrato arquitectónico publicable, no copias completas de esos rectores.
+- Para DOCX, XLSX, PPTX y PDF, un estándar/plantilla organizacional declarado debe resolverse desde su System of Record antes de generar o reformatear; los defaults portables solo aplican cuando no existe un override gobernado.
 - GitHub conserva únicamente conocimiento deliberadamente versionable/publicable y artefactos técnicos apropiados.
 - Notion conserva proyectos, relaciones, riesgos, tareas, Decision Gates y seguimiento operativo.
 - Los repositorios documentales autorizados conservan evidencia u originales cuando corresponda.
@@ -32,7 +34,7 @@ El licenciamiento se gobierna por tipo de activo y no debe inferirse por proximi
 - El archivo raíz `LICENSE` es un aviso de alcance y estado de licenciamiento del repositorio; no concede por sí mismo una licencia abierta general sobre toda la documentación metodológica.
 - El texto de la licencia MIT se conserva separadamente en `LICENSES/MIT.txt` para software o código que se identifique expresamente como cubierto por MIT.
 - La documentación metodológica pública no se considera licenciada bajo Creative Commons hasta que exista una decisión explícita, revisión de titularidad/procedencia y delimitación del corpus aplicable.
-- Las marcas y signos distintivos, incluido el nombre NEUMA cuando corresponda, no quedan licenciados por MIT ni por una eventual licencia Creative Commons salvo autorización expresa.
+- Las marcas y signos distintivos, incluido el nombre NEUMA cuando corresponda, no quedan licenciadas por MIT ni por una eventual licencia Creative Commons salvo autorización expresa.
 
 ## Estado
 `Neuma-Core` reemplazó el propósito histórico de `Neuma-WebSite`. El sitio web productivo se gestiona separadamente y el legado del sitio anterior está archivado bajo `archive/legacy-website/`.
