@@ -62,4 +62,4 @@ La validación de un módulo debe probar al menos:
 Antes de un catálogo amplio, validar el contrato con pocos módulos representativos. Criterio recomendado: un dominio de alta criticidad, un dominio técnico y un workflow transversal. La selección concreta se decide más adelante si afecta prioridades o riesgo.
 
 ## Estado
-Contrato aprobado conceptualmente por ADR-007. Esta versión queda preparada para revisión en la rama de trabajo de NEUMA v4; su promoción a `main` permanece sujeta al Gate C de merge del PR correspondiente.
+Contrato aprobado por ADR-007 y publicado en `main`. La conformidad conductual fue validada en E2 y la validación empírica representativa E3 fue publicada mediante PR #25. Esto no libera NEUMA v4 ni certifica los módulos piloto; la arquitectura permanece previa al Gate humano de declaración RC v4.
