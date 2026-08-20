@@ -18,13 +18,13 @@ Baseline evaluada:
 
 ## Conclusión ejecutiva
 
-**NEUMA v4 todavía no debe declararse RC.** La evidencia E1/E2/E3 satisface la parte arquitectónica y conductual del readiness, pero quedan tres precondiciones documentales/operativas concretas antes del Gate RC:
+La evidencia E1/E2/E3 satisface la parte arquitectónica y conductual del readiness. Las tres precondiciones documentales/operativas identificadas para el Gate RC quedaron preparadas en esta misma rama:
 
-1. definir el **bundle RC** con identidades/versiones exactas;
-2. documentar la **migración v3.x → v4** sin asumir que Operations deba saltar a v4.0 ni que los módulos piloto deban estabilizarse;
-3. documentar un **rollback verificable** para revertir la adopción del bundle RC sin perder estado material, Gates o compatibilidad.
+1. **bundle RC** definido en `docs/neuma-v4-rc-bundle.md`;
+2. **migración v3.x → v4** documentada en `docs/neuma-v4-migration-v3-to-v4.md`;
+3. **rollback RC** documentado en `docs/neuma-v4-rc-rollback.md`.
 
-No se identifica evidencia que justifique modificar Core, Operations v3.8 o los módulos piloto para cerrar estas precondiciones.
+No se identifica evidencia que justifique modificar Core, Operations v3.8 o los módulos piloto. Una vez verificada la integridad del PR y reconciliadas sus proyecciones, el siguiente paso material es el **Gate humano de declaración RC v4**.
 
 ## Readiness por criterio
 
@@ -41,62 +41,41 @@ No se identifica evidencia que justifique modificar Core, Operations v3.8 o los 
 | Postcondición | Satisfecho | E2 contractual y E3 con write → readback → postcondition. |
 | Compatibilidad | Satisfecho para baseline evaluada | Pilotos v0.2 + Operations v3.8 compatibles por regla gobernada backward-compatible; futuras combinaciones no evaluadas siguen `unknown`. |
 | Pilotos | Satisfecho para validación; no certificados | Los tres pilotos permanecen `v0.2-pilot`. |
-| Bundle RC | Pendiente | Debe fijar componentes, versiones, documentos y evidencia exacta. |
-| Migración v3.x → v4 | Pendiente | Debe documentarse como evolución del marco, no como sincronización forzada de números de versión. |
-| Rollback RC | Pendiente | Debe preservar baseline previa, estado material, Gates y compatibilidad. |
-| Documentación/proyecciones | En cierre | Se corrigen en esta rama referencias pre-E3/pre-v3.8; Notion ya refleja E3. |
+| Bundle RC | Satisfecho documentalmente | `docs/neuma-v4-rc-bundle.md` fija alcance, componentes, versiones y exclusiones. |
+| Migración v3.x → v4 | Satisfecho documentalmente | `docs/neuma-v4-migration-v3-to-v4.md` define migración aditiva, reversible y desacoplada del versionado de Operations/módulos. |
+| Rollback RC | Satisfecho documentalmente | `docs/neuma-v4-rc-rollback.md` fija punto de retorno, triggers, procedimiento y postcondición. |
+| Documentación/proyecciones | En verificación final | La rama corrige referencias pre-E3/pre-v3.8; PR #26 está proyectado en Notion como draft pre-RC. |
 
-## Bundle RC propuesto — alcance mínimo
+## Bundle RC
 
-El bundle RC debería contener únicamente artefactos necesarios para representar la arquitectura v4 validada:
+La especificación canónica propuesta está en `docs/neuma-v4-rc-bundle.md`. El bundle incluye únicamente Core vigente, Operations v3.8, ADR-007, contrato modular, suite M01–M15/F01–F15, evidencia E2/E3, evaluación pre-RC, migración, rollback y los tres pilotos v0.2 como evidencia experimental.
 
-1. NEUMA Core vigente — invariantes universales sin expansión disciplinar.
-2. NEUMA Operations v3.8 — control plane estable y backward-compatible de la familia v3.
-3. ADR-007 — arquitectura de especialización modular.
-4. Contrato de especialización modular v4.
-5. Suite formal M01–M15 y fixtures F01–F15.
-6. Evidencia E2 integral.
-7. Evidencia E3 de falsación representativa.
-8. Contratos/manifests de los tres pilotos v0.2, **como pilotos**, no como módulos certificados o estables.
-9. Documento de migración v3.x → v4.
-10. Documento de rollback del bundle RC.
+Se excluyen deliberadamente módulos adicionales, promoción automática de pilotos, Operations v4.0 por sincronización nominal, nuevas licencias Creative Commons, política de marca, decisiones de titularidad/procedencia y cualquier cambio PROD.
 
-No se incluye un catálogo adicional de módulos ni conocimiento disciplinar enciclopédico.
+## Migración v3.x → v4
 
-## Principios de migración v3.x → v4
+La ruta documentada en `docs/neuma-v4-migration-v3-to-v4.md` mantiene:
 
-La migración debe ser **aditiva y reversible** para la baseline observada:
+- Operations v3.8 como release estable mientras el contrato transversal siga backward-compatible;
+- módulos piloto desacoplados del lifecycle de Operations;
+- especialización como capacidad resoluble/degradable, no dependencia universal;
+- preservación de IDs/versiones, SoR, Gates, autorizaciones y siguiente acción;
+- verificación de compatibilidad en vez de herencia nominal.
 
-- NEUMA v4 describe la arquitectura integral del marco; no obliga a renombrar Operations v3.8 como Operations v4.0.
-- Operations v3.8 permanece válida mientras el contrato transversal siga backward-compatible.
-- Los módulos piloto siguen desacoplados del versionado de Core/Operations.
-- Un runtime sin módulos especializados debe seguir pudiendo operar NEUMA genérico; la especialización es resoluble y degradable, no una dependencia universal obligatoria.
-- Al adoptar el bundle RC, preservar IDs/versiones de módulos, compatibilidad, SoR, Gates y siguiente acción en checkpoints materiales.
-- Versiones futuras no evaluadas no heredan compatibilidad por similitud nominal.
+## Rollback RC
 
-## Rollback propuesto
-
-Rollback del bundle RC significa volver a la baseline pre-RC sin pérdida de autoridad ni estado:
-
-1. conservar como punto de retorno el `main` previo al eventual merge RC;
-2. no sobrescribir ni eliminar Operations v3.8 ni los manifests piloto al preparar RC;
-3. si la adopción RC revela incompatibilidad material, restaurar el conjunto documental/contractual anterior y marcar el RC como no promovible;
-4. preservar checkpoints de módulos activos, SoR, Gates y decisiones tomadas durante la evaluación;
-5. re-resolver disponibilidad/compatibilidad tras rollback en vez de asumir que el runtime conserva el mismo estado;
-6. verificar postcondición: baseline previa resoluble, sin doble autoridad canónica y sin proyecciones divergentes.
-
-No se define rollback PROD en este documento; PROD requiere Gate separado y su propio plan operativo cuando aplique.
+`docs/neuma-v4-rc-rollback.md` fija como punto de retorno pre-RC el SHA `5b0f97dae190351613a270c97bd7d255aba7bc6b` y exige preservar E2/E3, estado modular, Gates y proyecciones. El rollback del candidato no equivale a rollback PROD.
 
 ## Gates jurídicos
 
 Marca, derecho de autor, titularidad/procedencia, Creative Commons, política de marca y legado patrimonial permanecen separados. No se cierran ni reinterpretan por esta evaluación.
 
-Para un RC técnico/metodológico interno, estos Gates no bloquean por sí solos si el RC no concede nuevas licencias, no adopta una política de marca y no formula una nueva posición jurídica. Sí deben resolverse antes de cualquier acción de release cuyo alcance dependa materialmente de esas decisiones.
+Para un RC técnico/metodológico interno, estos Gates no bloquean por sí solos si el RC no concede nuevas licencias, no adopta política de marca y no formula una nueva posición jurídica. Sí deben resolverse antes de cualquier acción de release cuyo alcance dependa materialmente de esas decisiones.
 
 ## Decisión preparada
 
-Una vez que bundle, migración y rollback estén documentados y verificados, el siguiente Gate humano podrá formularse de forma mínima:
+Tras verificar el contenido de PR #26 y reconciliar su proyección, el siguiente Gate humano puede formularse de manera mínima:
 
-> **Declarar o no NEUMA v4 como Release Candidate**, manteniendo Operations v3.8 estable y los tres módulos en v0.2-pilot, sin publicación de release v4 ni cambio PROD.
+> **Declarar o no NEUMA v4 como Release Candidate**, manteniendo Operations v3.8 estable y los tres módulos en v0.2-pilot, sin publicar todavía una release v4 canónica ni ejecutar cambios PROD.
 
-Hasta entonces, el estado correcto es **pre-RC / readiness en preparación**.
+Hasta que ese Gate sea decidido, el estado correcto sigue siendo **pre-RC / readiness completado, declaración pendiente**.
