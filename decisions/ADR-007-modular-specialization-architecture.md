@@ -1,7 +1,7 @@
 # ADR-007 — Arquitectura de especialización modular NEUMA
 
 ## Estado
-Validada por decisión humana. Publicación en `main` pendiente del Gate C de merge del PR correspondiente.
+Validada por decisión humana y publicada en `main` mediante PR #19.
 
 ## Contexto
 NEUMA debe permanecer como marco transversal y portable, sin convertirse en un repositorio enciclopédico ni en el contenedor universal de conocimiento disciplinar. La especialización por áreas como salud, derecho, ciberseguridad, TIC, ciencia o arte, y por actividades como licitaciones, ventas, marketing, proyectos, auditoría o investigación, es útil; sin embargo, implementarla como ramas jerárquicas que heredan y duplican Core produciría forks metodológicos, divergencia, mantenimiento costoso y ambigüedad de autoridad.
