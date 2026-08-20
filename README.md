@@ -37,6 +37,10 @@ El licenciamiento se gobierna por tipo de activo y no debe inferirse por proximi
 - Las marcas y signos distintivos, incluido el nombre NEUMA cuando corresponda, no quedan licenciadas por MIT ni por una eventual licencia Creative Commons salvo autorización expresa.
 
 ## Estado
+**NEUMA 4.0 es la release canónica vigente del marco**, publicada el 2026-08-20. Su declaración y alcance están documentados en `docs/neuma-4.0-release.md`.
+
+NEUMA Operations conserva su identidad y lifecycle propios; la release del marco no fuerza sincronización nominal de sus componentes. Los módulos Derecho, Ciberseguridad y Auditoría permanecen en `v0.2-pilot` hasta evidencia y decisión específicas.
+
 `Neuma-Core` reemplazó el propósito histórico de `Neuma-WebSite`. El sitio web productivo se gestiona separadamente y el legado del sitio anterior está archivado bajo `archive/legacy-website/`.
 
 NEUMA es un marco vivo. Una release estable representa una versión gobernada, no una declaración de perfección ni una cesión implícita de derechos.
