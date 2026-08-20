@@ -9,6 +9,11 @@ This architecture note records the public/versionable boundary for NEUMA project
 - **GitHub** records only deliberately versionable/publicable architecture and technical conventions.
 - **Notion** remains the operational SoR for projects, relations, risks, tasks, Decision Gates and execution tracking.
 
+## Stable identity contract
+Cross-system references must bind to a stable logical/provider identity, not to mutable presentation metadata such as filename, title, folder path or methodological version label. For SharePoint/OneDrive objects, prefer the immutable provider drive/item identity or an equivalent canonical identifier returned by the connector. Human-readable names may be retained only as descriptive metadata.
+
+A rename or move of a canonical object must therefore not require rewriting governed projections merely because its filename or path changed. Reconciliation is required only when the stable identity, authority, semantics or material content relationship changes.
+
 ## Project bootstrap contract
 A governed project uses one rector document named `<Project> - Inst Proyecto.DocX` in its canonical repository. The rector contains only the project's context, scope and specific rules. It does not embed or freeze a NEUMA Core baseline.
 
@@ -23,7 +28,7 @@ Before generating or materially reformatting an artifact, resolve whether the en
 
 This precedence applies to DOCX, XLSX, PPTX and controlled PDF outputs. Each family retains its own canonical standard/template, technical implementation skill and format-specific QA. Explicit deliverable instructions take precedence over presentation defaults.
 
-Execution follows: `resolve SoR -> inspect current state -> resolve governed override -> generate minimum artifact -> format-specific QA -> persist -> verify postcondition`.
+Execution follows: `resolve SoR -> resolve stable identity -> inspect current state -> resolve governed override -> generate minimum artifact -> format-specific QA -> persist -> verify postcondition`.
 
 ## Idempotency and divergence
 Repeated bootstrap runs resolve the same rector by stable identity and should become no-ops when no material project-specific change exists. Independent human edits are not silently overwritten; material divergence is treated as a conflict requiring reconciliation.
