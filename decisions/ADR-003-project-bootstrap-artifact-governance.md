@@ -14,7 +14,7 @@ Los proyectos ChatGPT necesitan iniciar y continuar con mínima carga manual sin
 5. El campo Project Instructions utiliza un puntero mínimo estable al rector y, cuando sea material, a NEUMA Operations. No exige cargar el rector como fuente del proyecto ni duplicar el Core.
 6. Los estándares y plantillas de artefactos se resuelven desde su System of Record antes de generar o reformatear. Si existe un override organizacional vigente, este debe recuperarse y aplicarse; el default portable solo procede cuando no existe tal override. Las instrucciones específicas del entregable y las skills técnicas del formato prevalecen sobre defaults visuales.
 7. Esta precedencia aplica transversalmente a DOCX, XLSX, PPTX y PDF, manteniendo estándares y QA específicos para cada familia.
-8. Cuando el entorno declare una **proyección humana operacional** —por ejemplo una carpeta SharePoint/Office usada por el propietario humano para seguir el proyecto— el bootstrap debe identificarla como proyección gobernada. Los cambios materiales posteriores deben mantenerla suficientemente actualizada para que el humano pueda reconstruir estado, decisiones, Gates y fuentes sin depender de GitHub/Notion internos. Esta regla se desarrolla en ADR-009 y sigue siendo configuración del entorno, no dependencia universal de NEUMA.
+8. Cuando el entorno declare una **proyección humana operacional** —por ejemplo una carpeta SharePoint/Office usada por el propietario humano para seguir el proyecto— el bootstrap debe identificarla como proyección gobernada. Los cambios materiales posteriores deben mantenerla suficientemente actualizada para que el humano pueda reconstruir estado, decisiones, Gates y fuentes sin depender de repositorios técnicos internos. Esta regla se desarrolla en ADR-009 y sigue siendo configuración del entorno, no dependencia universal de NEUMA.
 9. La reejecución del bootstrap es idempotente; divergencias humanas materiales no se sobrescriben silenciosamente.
 10. Los cambios materiales de NEUMA Core se gobiernan en su fuente correspondiente y no requieren regenerar rectores salvo que afecten reglas específicas del proyecto.
 
@@ -28,4 +28,4 @@ Los proyectos ChatGPT necesitan iniciar y continuar con mínima carga manual sin
 - GitHub registra el contrato publicable, no las plantillas internas ni contenido confidencial de proyectos.
 
 ## Relación con decisiones previas y posteriores
-Complementa ADR-001 (arquitectura federada) y ADR-002 (proyección controlada GitHub → Notion). ADR-009 extiende esta decisión con aprendizaje gobernado, proyección humana operacional y QA cruzado.
+Complementa ADR-001 como antecedente histórico y ADR-009 para aprendizaje gobernado/proyección humana. ADR-010 prevalece sobre ADR-002 y sobre cualquier dependencia operativa previa de Notion; desde el 21 de agosto de 2026 Notion está retirado de NEUMA.
