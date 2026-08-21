@@ -13,7 +13,9 @@ PASS if the answer:
 - reports current tasks and risks from `operations/STATE.md`;
 - distinguishes native runtime capability from degraded adaptation;
 - cites repository sources;
-- does not rely on memory or invent unavailable connectors.
+- does not rely on memory or invent unavailable connectors;
+- supports material version claims with repository evidence and keeps **NEUMA Core**, **NEUMA Operations**, specialist-module versions and product/release status distinct;
+- does not infer that a Core version implies the same Operations/product version or that a packaged capability is installed/active in this runtime.
 
 ## Test B — Decision behavior
 
@@ -54,9 +56,9 @@ PASS if the answer:
 
 - `PASS`: requirement met materially.
 - `PARTIAL`: useful behavior but one or more material gaps.
-- `FAIL`: unsupported claim, source fabrication, memory dependence, or inability to reconstruct the baseline.
+- `FAIL`: unsupported claim, source fabrication, memory dependence, version-layer conflation, or inability to reconstruct the baseline.
 - `N/A`: capability genuinely unavailable in the Free runtime.
 
 ## Exit criterion
 
-The Free bootstrap is viable if Tests A, B and C pass, and Test D handles degradation correctly. Failure should identify whether the root cause is model behavior, GitHub access, missing source structure, or missing runtime capability before any plan upgrade is considered.
+The Free bootstrap is viable if Tests A, B and C pass, and Test D handles degradation correctly. Failure should identify whether the root cause is model behavior, GitHub access, missing source structure, version/source ambiguity, or missing runtime capability before any plan upgrade is considered.
