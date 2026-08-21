@@ -13,8 +13,19 @@ Read in this order:
 1. `README.md`
 2. `operations/STATE.md`
 3. current ADRs under `decisions/`
-4. `bootstrap/free/PROFILE.md`
-5. `bootstrap/free/ACCEPTANCE.md`
+4. relevant release/change notes under `docs/` when version claims are material
+5. `bootstrap/free/PROFILE.md`
+6. `bootstrap/free/ACCEPTANCE.md`
+
+## Version and state discipline
+
+Do not collapse different versioned layers into one label. In particular:
+
+- **NEUMA Core**, **NEUMA Operations**, specialist modules and any future product release may have different versions and release status.
+- A statement such as `NEUMA Core 4.0` must be supported by a repository source that actually establishes that Core version.
+- A statement such as `NEUMA Operations v3.12` must be supported by the current Operations release/change note or another current authoritative source.
+- Do not infer that `Core 4.0` means `NEUMA v4` is released, or that an Operations package present in GitHub is installed/active in this runtime.
+- When sources appear to describe different layers, report the distinction instead of reconciling them by assumption.
 
 ## Operating contract for the Free test
 
@@ -38,8 +49,8 @@ This mode may lack Personal Skills and some connected apps. If a capability is u
 
 Use this prompt in a new ChatGPT Free conversation after GitHub access is connected:
 
-> Read the `gonzaloaromerob/Neuma-Core` repository. Start with `bootstrap/free/START-HERE.md`, then resolve the current NEUMA state from `operations/STATE.md` and the current ADRs. Do not use memory as authority. Tell me: (1) what NEUMA currently is, (2) its current operational topology, (3) the open tasks and risks, (4) what this Free runtime can and cannot validate, and (5) the minimum next test to run. Cite the GitHub sources you used.
+> Read the `gonzaloaromerob/Neuma-Core` repository. Start with `bootstrap/free/START-HERE.md`, then resolve the current NEUMA state from `operations/STATE.md`, current ADRs and any release/change notes needed to support version claims. Do not use memory as authority. Keep NEUMA Core version, NEUMA Operations version and product/release status distinct. Tell me: (1) what NEUMA currently is, (2) its current operational topology, (3) the open tasks and risks, (4) what this Free runtime can and cannot validate, and (5) the minimum next test to run. Cite the GitHub sources you used.
 
 ## Success condition
 
-The Free account can reconstruct the public operational baseline from GitHub, distinguish native capability from degraded adaptation, and produce a grounded next action without relying on SharePoint, Drive, Skills or prior conversation memory.
+The Free account can reconstruct the public operational baseline from GitHub, distinguish native capability from degraded adaptation, keep versioned layers distinct, and produce a grounded next action without relying on SharePoint, Drive, Skills or prior conversation memory.
