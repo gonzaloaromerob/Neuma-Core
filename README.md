@@ -23,7 +23,7 @@ Conservar decisiones públicas o técnicas, arquitectura publicable, documentaci
 - Los rectores `<Proyecto> - Inst Proyecto.DocX` permanecen en SharePoint y contienen únicamente contexto, alcance y reglas específicas.
 - Para DOCX, XLSX, PPTX y PDF, resolver estándar/plantilla organizacional desde su SoR antes de generar o reformatear; los defaults portables sólo aplican sin override gobernado.
 - Los originales de evidencia permanecen en sus repositorios autorizados; GitHub guarda referencias y estado sólo cuando aportan continuidad o trazabilidad.
-- **Notion deja de ser SoR operativo para trabajo nuevo.** Durante la transición se conserva como fuente legado sin proyecciones nuevas; su limpieza se gobierna aparte.
+- **Notion está retirado de NEUMA.** No es SoR, proyección, dependencia, destino operativo ni postcondición.
 - Evitar sincronización bidireccional automática y capas persistentes sin valor material.
 - Los cambios materiales pasan por rama/PR y revisión proporcional al riesgo.
 - No almacenar secretos ni información sensible innecesaria en este repositorio público.
