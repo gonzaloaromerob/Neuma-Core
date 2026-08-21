@@ -2,14 +2,14 @@
 
 **Fecha de corte:** 2026-08-21
 
-Este archivo reemplaza a Notion como superficie operacional persistente para estado, riesgos, tareas, Gates y referencias de evidencia aptas para GitHub. Los originales documentales siguen en sus respectivos Systems of Record.
+Este archivo es la superficie operacional persistente para estado, riesgos, tareas, Gates y referencias de evidencia aptas para GitHub. Los originales documentales siguen en sus respectivos Systems of Record.
 
 ## 1. Proyectos / workstreams
 
 ### Piloto integral NEUMA Operations
-- Estado legado en Notion: `Piloto`.
+- Estado: `Cerrado`.
 - Objetivo: validar gobierno, trazabilidad y verificación de un flujo multiapp federado sin duplicación indiscriminada.
-- Resultado operativo: la arquitectura federada, los Decision Gates y la política de proyección fueron validados; el estado relevante queda absorbido por las ADR y este archivo. El proyecto deja de requerir seguimiento independiente en Notion.
+- Resultado operativo: la arquitectura federada, los Decision Gates y la política de proyección fueron validados; posteriormente la topología se simplificó mediante ADR-010 y Notion fue retirado completamente de NEUMA.
 - Fuente histórica pública de piloto: https://docs.google.com/document/d/1BMk0qKFpSzwey6NafRE07cmMLkBa-06Eh8mWj6OQMOU/edit
 
 ### NEUMA Web — Operación productiva
@@ -22,19 +22,19 @@ Este archivo reemplaza a Notion como superficie operacional persistente para est
 ## 2. Riesgos vigentes
 
 ### RISK-001 — Divergencia y sobrescritura entre múltiples SoR
-- Estado heredado: `Abierto`.
-- Impacto heredado: `Alto`.
-- Contexto: el riesgo nació de la posibilidad de sincronización bidireccional Notion ↔ GitHub.
-- Control vigente tras ADR-010: Notion deja de ser SoR operativo; se reduce la topología a GitHub + SharePoint + SoR original aplicable. No hay sincronización bidireccional por defecto. Mantener un SoR único por objeto, idempotencia, detección de conflicto y Gate ante flujos inversos materiales.
-- Estado objetivo: revisar en próxima iteración de higiene de Notion; si Notion queda retirado sin nuevas proyecciones bidireccionales, este riesgo puede cerrarse o degradarse.
+- Estado: `Cerrado` para el escenario que lo originó.
+- Impacto residual: `Bajo` como riesgo genérico de cualquier arquitectura multi-SoR.
+- Contexto histórico: nació de la posibilidad de sincronización bidireccional Notion ↔ GitHub.
+- Cierre: Notion fue retirado; no existen proyecciones bidireccionales ni dependencia operacional allí. La topología vigente es GitHub + SharePoint + SoR original aplicable.
+- Control permanente: un SoR único por objeto, idempotencia, detección de conflicto y Gate ante flujos inversos materiales.
 
 ### RISK-002 — Efectos secundarios de escrituras GitHub
-- Estado heredado: `Mitigado`.
-- Impacto heredado: `Bajo`.
+- Estado: `Mitigado`.
+- Impacto: `Bajo`.
 - Contexto histórico: una escritura GitHub disparó preview de Vercel durante el piloto.
 - Control vigente: GitHub es el canal gobernado; efectos productivos pasan por workflows explícitos, Environment `production`, confirmaciones, releases inmutables, smoke tests y rollback probado. Vercel ya no forma parte de la arquitectura vigente.
 
-## 3. Tareas abiertas migradas
+## 3. Tareas abiertas
 
 ### TASK-001 — Validar activación contextual de NEUMA Operations
 - Estado: `Pendiente`.
@@ -60,7 +60,10 @@ Este archivo reemplaza a Notion como superficie operacional persistente para est
 ## 4. Tareas cerradas relevantes para trazabilidad
 
 - Definir política de efectos secundarios para escrituras GitHub — `Hecha`.
-- Diseñar política de sincronización controlada Notion–GitHub — `Hecha`; su arquitectura queda ahora superada por ADR-010 en cuanto al rol operativo de Notion.
+- Diseñar política de sincronización controlada Notion–GitHub — `Hecha`; superada por ADR-010.
+- Migrar conocimiento operacional necesario desde Notion a GitHub — `Hecha`.
+- Ejecutar higiene POST del árbol activo de GitHub — `Hecha`.
+- Retirar completamente NEUMA de Notion — `Hecha`; el usuario completó manualmente el residuo que el conector no podía purgar.
 
 ## 5. Decision Gates preservados
 
@@ -68,7 +71,7 @@ Este archivo reemplaza a Notion como superficie operacional persistente para est
 - Nivel: `C`.
 - Estado histórico: `Aprobado`.
 - Decisión: no habilitar sincronización bidireccional automática; preferir flujo gobernado por System of Record y eventos explícitos.
-- Nota de vigencia: fue un Gate correcto para la arquitectura entonces vigente. ADR-010 simplifica posteriormente la topología y elimina la necesidad de proyección GitHub → Notion como operación futura.
+- Vigencia: histórico. ADR-010 retiró posteriormente Notion de la topología NEUMA.
 
 ## 6. Evidencias referenciadas
 
@@ -76,7 +79,7 @@ Las siguientes referencias se preservan sin copiar sus originales:
 
 - Fuente piloto — Arquitectura federada NEUMA: https://docs.google.com/document/d/1BMk0qKFpSzwey6NafRE07cmMLkBa-06Eh8mWj6OQMOU/edit
 - Evidencia ficticia/no sensible de sincronización bidireccional propuesta: https://docs.google.com/document/d/1VKxZs1FfZvpOa5nTD8OsqcLErfIIdSIvs5B8Z3_LdSI/edit
-- NEUMA — Estrategia 2026: evidencia `Interna`; original en Google Drive. **No copiar a GitHub**. Su ubicación original queda deliberadamente fuera de este archivo público para evitar promover detalles internos innecesarios.
+- NEUMA — Estrategia 2026: evidencia `Interna`; original en Google Drive. **No copiar a GitHub**.
 - NEUMA Web — recuperación de 23 assets históricos: evidencia verificada; el original/histórico permanece en SharePoint y el resultado productivo vive en https://www.neuma.com.co
 
 ## 7. Topología vigente de Systems of Record
@@ -85,8 +88,14 @@ Las siguientes referencias se preservan sin copiar sus originales:
 - **GitHub / Neuma-Web:** código, CI/CD y operación técnica del sitio.
 - **SharePoint:** corpus interno rector, estándares, plantillas, Office, entregables, históricos y proyección humana operacional.
 - **Otros SoR originales:** evidencias/documentos fuente permanecen donde nacieron cuando trasladarlos no sea necesario.
-- **Notion:** fuente legado temporal; no crear nuevas dependencias ni proyecciones. Limpieza diferida a una iteración posterior.
+- **Notion:** retirado de NEUMA; no es SoR, proyección, dependencia ni destino operativo.
 
 ## 8. Regla de continuidad
 
-Una conversación no es SoR. Para reconstruir NEUMA después de pérdida de contexto: resolver ADR vigentes, este `operations/STATE.md`, la skill NEUMA Operations vigente y la proyección humana SharePoint. No depender de Notion para trabajo nuevo.
+Una conversación no es SoR. Para reconstruir NEUMA después de pérdida de contexto: resolver ADR vigentes, este `operations/STATE.md`, la skill NEUMA Operations vigente y la proyección humana SharePoint; luego resolver únicamente los SoR originales que sean necesarios para la evidencia del caso. La reconstrucción no depende de Notion.
+
+## 9. Prueba de reconstrucción post-Notion
+
+Criterio: desde una conversación nueva y sin Notion debe poder resolverse la release vigente, decisiones, topología, estado operacional, riesgos/tareas/Gates, skill gobernante, corpus interno y fuentes originales aplicables.
+
+Resultado de cierre: **PASS**. La información material necesaria está distribuida entre GitHub, SharePoint, NEUMA Operations y los SoR originales aplicables, sin dependencia de Notion.

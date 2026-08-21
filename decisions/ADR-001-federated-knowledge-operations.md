@@ -18,7 +18,7 @@ Adoptar una arquitectura federada con System of Record explícito por tipo de ob
 Evitar sincronización bidireccional automática y duplicación innecesaria. Preferir referencias cruzadas verificables.
 
 ## Evolución posterior
-ADR-010 simplifica la topología y traslada a GitHub el estado operacional versionable apto para publicación. SharePoint permanece como SoR documental interno y proyección humana. Notion se conserva temporalmente como fuente legado hasta su limpieza posterior, pero ya no es SoR para trabajo nuevo.
+ADR-010 simplificó la topología y trasladó a GitHub el estado operacional versionable apto para publicación. SharePoint permanece como SoR documental interno y proyección humana. **Notion fue retirado completamente de NEUMA el 21 de agosto de 2026 y ya no participa como SoR, proyección, dependencia ni destino operativo.**
 
 ## Riesgos históricos
 - Divergencia entre copias.
@@ -33,4 +33,4 @@ ADR-010 simplifica la topología y traslada a GitHub el estado operacional versi
 - Registrar fuente, destino, estado y efectos secundarios materiales.
 
 ## Evidencia de validación
-El piloto integral Drive → GitHub → Notion fue ejecutado y verificado el 2026-08-18. El PR de control se cerró sin merge después de completar la prueba. La integración Vercel legado fue posteriormente retirada y el repositorio fue renombrado a `Neuma-Core`.
+El piloto integral Drive → GitHub → Notion fue ejecutado y verificado el 2026-08-18. El PR de control se cerró sin merge después de completar la prueba. La integración Vercel legado fue posteriormente retirada y el repositorio fue renombrado a `Neuma-Core`. La topología final post-ADR-010 fue posteriormente reconstruida y verificada sin Notion.
